@@ -1,3 +1,8 @@
+---
+title: python_virtualenv
+date: 2020-07-04 15:58:58
+tags:
+---
 # Python环境控制
 
 ## Motivation
@@ -6,7 +11,7 @@
 ## 实现
 在命令行窗口
 ```
-pip install virtualenv	#安装virtualenv环境
+pip install virtualenv		#安装virtualenv环境
 mkdir any_path			#新建文件夹
 virtualenv any_path		#新建虚拟环境
 cd any_path/bin			#打开bin文件夹
@@ -23,11 +28,11 @@ which python3
 一般是`\usr\bin\python3`
 随后，将上面的代码简单修改一下
 ```
-pip install virtualenv						#已经安装则忽略这一行
-mkdir any_path								#新建文件夹
-virtualenv -p \usr\bin\python3 any_path		#新建python3虚拟环境
-cd any_path/bin								#打开bin文件夹
-source activate								#激活虚拟环境
+pip install virtualenv			#已经安装则忽略这一行
+mkdir any_path				#新建文件夹
+virtualenv -p \usr\bin\python3 any_path	#新建python3虚拟环境
+cd any_path/bin				#打开bin文件夹
+source activate				#激活虚拟环境
 ```
 
 ## 退出虚拟环境
