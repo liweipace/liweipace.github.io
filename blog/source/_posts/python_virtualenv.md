@@ -1,6 +1,6 @@
 ---
-title: python_virtualenv
-date: 2020-07-04 15:58:58
+title: 'Python Virtualenv'
+date: 2020-03-31 20:00:00
 tags:
 - Python
 - Virtualenv 
