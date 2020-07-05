@@ -97,7 +97,12 @@ tag_generator:
 include:
 exclude:
 ignore:
-
+# search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
