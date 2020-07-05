@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="shortcut icon" href="https://i.loli.net/2020/05/14/1VmKWIc62UROiyC.png">
+    <title>马路创新 | 数据日报</title>
+    {% for jsfile_name in script_list %}
+        <script src="{{ host }}/{{ jsfile_name }}.js"></script>
+    {% endfor %}
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="F:/tools/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+		/* .font-type{
+			color: #ce1032;
+			font-size:170%;
+		} */
+		a {
+		-webkit-transition: color .3s ease;
+		transition: color .3s ease;
+		}
+		.position1{
+			position: relative;
+			/* float: left; */
+			width: 100%;
+			height: 64px;
+			padding: 0 40px;
+			line-height: 62px;
+			background-color: #FFF;
+			z-index: 10;
+			max-width: 100%;
+			background: #fff;
+			-webkit-box-shadow: 0 2px 8px #f0f1f2;
+			box-shadow: 0 2px 8px #f0f1f2;
+		}
+		@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+		.position1 div{
+			display: inline-block;
+		}
+		.position1 .logo img{
+			max-height: 56px;
+		}
+		.position1 span{
+			display: inline-block;
+			position: relative;
+			width: 1px;
+			height: 24px;
+			background-color: #ccc;
+			top: 5px;
+			margin: 0 20px;
+			transition: all .3s;
+		}
+		.position1 .date{
+			float: right;
+		}
+		.navbar{
+			margin-bottom: 0;
+		}
+		
+		.nav .open > a {
+			background-color: transparent;
+		}
+		.nav .open > a:hover {
+			background-color: transparent;
+		}
+		.nav .open > a:focus {
+			background-color: transparent;
+		}
+		
+		/*-------------------------------*/
+		/*           Wrappers            */
+		/*-------------------------------*/
+		#wrapper {
+			-moz-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			-webkit-transition: all 0.5s ease;
+			padding-left: 0;
+			transition: all 0.5s ease;
+			position: relative;
+			padding: 60px 15px 0;
+			background: #f5f7f9;
+		}
+		#wrapper.toggled {
+			padding-left: 285px;
+			/* margin-top: 64px; */
+		}
+		#wrapper.toggled #sidebar-wrapper {
+			width: 270px;
+		}
+		#wrapper.toggled #page-content-wrapper {
+			margin-right: -270px;
+			position: absolute;
+		}
+		#wrapper.toogled .page-detail {
+			margin-left: 20px;
+		} */
+		
+		.page-detail {
+			position: relative;
+			padding-left: 70px;
+			margin-bottom:50px;
+			width: 90%;
+		}
+		/*-------------------------------*/
+		/*     Sidebar nav styles        */
+		/*-------------------------------*/
+		#sidebar-wrapper {
+			-moz-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			-webkit-transition: all 0.5s ease;
+			/* background: #1a1a1a; */
+			height: 100%;
+			left: 270px;
+			margin-left: -270px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			transition: all 0.5s ease;
+			width: 0;
+			z-index: 1000;
+			border-right: 1px solid #f0f0f0;
+			background: #fff;
+		}
+		#sidebar-wrapper::-webkit-scrollbar {
+			display: none;
+		}
+		#page-content-wrapper {
+			padding-top: 70px;
+			width: 100%;
+		}
+		.sidebar-nav {
+			position: absolute;
+			top: 66px;
+			list-style: none;
+			margin: 0;
+			padding: 20px 0;
+			width: 270px;
+		}
+		.sidebar-nav .title{
+			padding: 15px 20px;
+			padding-left: 40px!important;
+			color: rgba(0,0,0,.75);
+			font-size: 14px;
+			line-height: 1.5715;
+			-webkit-transition: all .3s;
+			transition: all .3s;
+			margin-top: 0;
+			margin-bottom: 4px;
+		}
+		.sidebar-nav .title::after {
+			position: relative;
+			top: 12px;
+			display: block;
+			width: calc(100% - 20px);
+			height: 1px;
+			background: #f0f0f0;
+			content: '';
+		}
+		.sidebar-nav li {
+			display: inline-block;
+			line-height: 20px;
+			position: relative;
+			width: 100%;
+		}
+		/* .sidebar-nav li:before {
+			background-color: #1c1c1c;
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			-webkit-transition: width 0.2s ease-in;
+			transition: width 0.2s ease-in;
+			width: 3px;
+			z-index: -1;
+		} */
+		
+		/* .sidebar-nav li:nth-child(2):before {
+			background-color: #9e000c;
+		}
+		.sidebar-nav li:nth-child(3):before {
+			background-color: #a50211;
+		}
+		.sidebar-nav li:nth-child(4):before {
+			background-color: #ac1116;
+		}
+		.sidebar-nav li:nth-child(5):before {
+			background-color: #b31b1b;
+		}
+		.sidebar-nav li:nth-child(6):before {
+			background-color: #ba2420;
+		}
+		.sidebar-nav li:nth-child(7):before {
+			background-color: #c12b25;
+		}
+		.sidebar-nav li:nth-child(8):before {
+			background-color: #c8332a;
+		}
+		.sidebar-nav li:nth-child(9):before {
+			background-color: #c64b3d;
+		} */
+		.sidebar-nav li:hover:before {
+			-webkit-transition: width 0.2s ease-in;
+			transition: width 0.2s ease-in;
+			width: 100%;
+		}
+		.sidebar-nav li a {
+			/* color: #dddddd; */
+			display: block;
+			padding: 10px 30px 10px 45px;
+			text-decoration: none;
+			color: rgba(0,0,0,.60);
+		}
+		.sidebar-nav li.open:hover before {
+			-webkit-transition: width 0.2s ease-in;
+			transition: width 0.2s ease-in;
+			width: 100%;
+		}
+		.sidebar-nav .dropdown-menu {
+			display: inline-block;
+			/* padding: 15px; */
+			/* background-color: #222222; */
+			border-radius: 0;
+			border: none;
+			box-shadow: none;
+			margin: 0;
+			position: relative;
+			width: 100%;
+		}
+		
+		.sidebar-nav .dropdown-menu li a.active::after{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			border-right: 3px solid #ce1032;
+			-webkit-transform: scaleY(.0001);
+			transform: scaleY(.0001);
+			opacity: 0;
+			-webkit-transition: opacity .15s cubic-bezier(.215,.61,.355,1),-webkit-transform .15s cubic-bezier(.215,.61,.355,1);
+			transition: opacity .15s cubic-bezier(.215,.61,.355,1),-webkit-transform .15s cubic-bezier(.215,.61,.355,1);
+			transition: transform .15s cubic-bezier(.215,.61,.355,1),opacity .15s cubic-bezier(.215,.61,.355,1);
+			transition: transform .15s cubic-bezier(.215,.61,.355,1),opacity .15s cubic-bezier(.215,.61,.355,1),-webkit-transform .15s cubic-bezier(.215,.61,.355,1);
+			content: '';
+		}
+		.sidebar-nav li a:hover,
+		.sidebar-nav li a:active,
+		.sidebar-nav li a:focus,
+		.sidebar-nav li.open a:hover,
+		.sidebar-nav li.open a:active,
+		.sidebar-nav li.open a:focus {
+			/* background-color: transparent; */
+			color: #ce1032;
+			text-decoration: none;
+		}
+		/*-------------------------------*/
+		/*       Hamburger-Cross         */
+		/*-------------------------------*/
+		.hamburger {
+			background: black;
+			border: none;
+			display: block;
+			height: 32px;
+			right: 15px;
+			position: fixed;
+			top: 190px;
+			width: 32px;
+			z-index: 999;
+		}
+		.hamburger:hover {
+			outline: none;
+		}
+		.hamburger:focus {
+			outline: none;
+		}
+		.hamburger:active {
+			outline: none;
+		}
+		.hamburger.is-closed:before {
+			-webkit-transform: translate3d(0, 0, 0);
+			-webkit-transition: all 0.35s ease-in-out;
+			color: #ffffff;
+			content: '';
+			display: block;
+			font-size: 14px;
+			line-height: 32px;
+			opacity: 0;
+			text-align: center;
+			width: 100px;
+		}
+		.hamburger.is-closed:hover before {
+			-webkit-transform: translate3d(-100px, 0, 0);
+			-webkit-transition: all 0.35s ease-in-out;
+			display: block;
+			opacity: 1;
+		}
+		.hamburger.is-closed:hover .hamb-top {
+			-webkit-transition: all 0.35s ease-in-out;
+			top: 0;
+		}
+		.hamburger.is-closed:hover .hamb-bottom {
+			-webkit-transition: all 0.35s ease-in-out;
+			bottom: 0;
+		}
+		.hamburger.is-closed .hamb-top {
+			-webkit-transition: all 0.35s ease-in-out;
+			background-color: rgba(255, 255, 255, 0.7);
+			top: 5px;
+		}
+		.hamburger.is-closed .hamb-middle {
+			background-color: rgba(255, 255, 255, 0.7);
+			margin-top: -2px;
+			top: 50%;
+		}
+		.hamburger.is-closed .hamb-bottom {
+			-webkit-transition: all 0.35s ease-in-out;
+			background-color: rgba(255, 255, 255, 0.7);
+			bottom: 5px;
+		}
+		.hamburger.is-closed .hamb-top,
+		.hamburger.is-closed .hamb-middle,
+		.hamburger.is-closed .hamb-bottom,
+		.hamburger.is-open .hamb-top,
+		.hamburger.is-open .hamb-middle,
+		.hamburger.is-open .hamb-bottom {
+			height: 4px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}
+		.hamburger.is-open .hamb-top {
+			-webkit-transform: rotate(45deg);
+			-webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+			background-color: #ffffff;
+			margin-top: -2px;
+			top: 50%;
+		}
+		.hamburger.is-open .hamb-middle {
+			background-color: #ffffff;
+			display: none;
+		}
+		.hamburger.is-open .hamb-bottom {
+			-webkit-transform: rotate(-45deg);
+			-webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+			background-color: #ffffff;
+			margin-top: -2px;
+			top: 50%;
+		}
+		.hamburger.is-open:before {
+			-webkit-transform: translate3d(0, 0, 0);
+			-webkit-transition: all 0.35s ease-in-out;
+			color: #ffffff;
+			content: '';
+			display: block;
+			font-size: 14px;
+			line-height: 32px;
+			opacity: 0;
+			text-align: center;
+			width: 100px;
+		}
+		.hamburger.is-open:hover before {
+			-webkit-transform: translate3d(-100px, 0, 0);
+			-webkit-transition: all 0.35s ease-in-out;
+			display: block;
+			opacity: 1;
+		}
+		/*-------------------------------*/
+		/*            Table              */
+		/*-------------------------------*/
+		
+		table {
+			font-family: verdana,arial,sans-serif;
+			font-size:14px;
+			color:#333333;
+			border-width: 1px;
+			border-color: #a9c6c9;
+			border-collapse: collapse;
+		}
+		table th {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #a9c6c9;
+		}
+		table td {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #a9c6c9;
+		}
+		.table-wrapper{
+			margin-bottom:20px;
+			width:1200px;
+			height:350px;
+			overflow-y: scroll;
+		}
+		.leftoddrowcolor{
+			background-color:#F2D7D4;
+		}
+		.leftevenrowcolor{
+			background-color:#D9877E;
+		}
+		.rightoddrowcolor{
+			background-color:#7799FF;
+		}
+		.rightevenrowcolor{
+			background-color:#DDE6FF;
+		}
+		.diagram{
+			margin-left:10px;
+			margin-bottom: 20px;
+		}
+		/*-------------------------------*/
+		/*           Indicator           */
+		/*-------------------------------*/
+		#indicator{
+			position: fixed;
+			right: 0px;
+			top: 200px;
+			width: 200px;
+			background-color:#DDE6FF;
+			display: flex;
+			flex-direction: column;
+			align-items:center;
+		}
+		#indicator-head{
+			display: flex;
+			flex-direction: row;
+			align-items:center;
+			width:200px;
+			height:40px;
+			background-color: #333;
+			color: #FFF;
+			font-size:19px;
+		}
+		#indicator-head label{
+			margin-left:10px;
+		}
+		#indicator-body{
+			display: flex;
+			flex-direction: row;
+			align-items:center;
+			left:0px;
+			right:0px;
+			width:200px;
+			background-color: #aaaaaa;
+			font-size:15px;
+			padding:14px;
+		}
+		/*-------------------------------*/
+		/*             Label             */
+		/*-------------------------------*/
+		.explainLabel{
+			margin:20px;
+		
+			width: 80%;
+			font-size:15px;
+		}
+		.explainLabel.isClosed{
+			display:none;
+		}
+		.explainLabel.isOpen{
+			display:visible;
+		}
+		.explainLabel-Sub{
+			padding-left:20px;
+		}
+		.explainLabel-Example{
+			padding-left:20px;
+			margin-top:10px;
+		}	
+	</style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top" role="navigation">
+    <div class="position1">
+      <div class="logo"><img src="https://i.loli.net/2020/05/14/ANB72PYiS8ZagOC.png" alt=""></div>
+      <span class="line"></span>
+      <div><h4>{{warehouse_name|safe}}·数据日报</h4></div>
+      <div class="date">{{tdate|safe}}</div>
+    </div>
+  </div>
+  <!-- <div style="height: 70px;width: 100%;"></div> -->
+    <!-- <div id="indicator">
+        <div id="indicator-head"><label id="indicator-head-label">小提示</label></div>
+        <div id="indicator-body"><label id="indicator-body-label">提示内容</label></div>
+    </div> -->
+    <!-- <div id="page-content-wrapper">
+          <button id = "hamb" type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+          </button>
+    </div> -->
+
+<!-- 侧滑菜单 -->
+  <div id="wrapper">
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li>
+                    <a href="#jump1" class="title">
+                      <i class="fa fa-fw fa-tasks"></i> 概览
+                    </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#jump11">总述</a></li>
+                    <li><a href="#jump12">全天出库量</a></li>
+                  </ul>
+                </li>
+                <li>
+                    <a href="#jump2" class="title">
+                        <i class="fa fa-fw fa-cubes"></i> 库存统计 </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#jump21">库位利用率</a></li>
+                    <li><a href="#jump22">货架利用率</a></li>
+                    <li><a href="#jump23">在库商品存放占比</a></li>
+                  </ul>
+                </li>
+                <li>
+                    <a href="#jump3" class="title">
+                        <i class="fa fa-fw fa-paste"></i> 订单统计 </a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="#jump31">每小时入库订单总数/件数</a></li>
+                      <li><a href="#jump32">每小时出库订单总数/件数</a></li>
+                      <li><a href="#jump33">订单结构分析</a></li>
+					  <li><a href="#jump34">订单分布分析</a></li>
+                  </ul>
+                </li>
+                <li>
+                    <a href="#jump4" class="title">
+                        <i class="fa fa-fw fa-cube"></i> SKU统计 </a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="#jump41">SKU热销TOP20</a></li>
+                      <li><a href="#jump42">SKU滞销TOP20</a></li>
+                      <li><a href="#jump43">预测销量</a></li>
+                  </ul>
+                </li>
+                <li>
+                    <a href="#jump5" class="title">
+                        <i class="fa fa-fw fa-desktop"></i> 工作站出库统计 </a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="#jump51">格口使用率</a></li>
+					  <li><a href="#jump52">工作站工作时长</a></li>
+                      <li><a href="#jump53">工作站出库效率</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#jump6" class="title">
+                      <i class="fa fa-fw fa-bar-chart-o"></i> AGV统计 </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#jump63">AGV效率分析</a></li>
+                    <li><a href="#jump65">AGV行走里程数</a></li>
+                    <li><a href="#jump66">单个AGV里程数</a></li>
+                    <li><a href="#jump67">货架搬运次数</a></li>
+                    <li><a href="#jump68">AGV充电次数,时长</a></li>
+                    <li><a href="#jump69">AGV历史充电次数时长的分布</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#jump7" class="title">
+                      <i class="fa fa-fw fa-users"></i> 工人KPI </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#jump71">工人入库效率</a></li>
+                    <li><a href="#jump72">工人拣货效率</a></li>
+                    <li><a href="#jump73">当日工人SKU拣货时长</a></li>
+                    <li><a href="#jump74">当日工人单次货架操作时长</a></li>
+                    <li><a href="#jump75">工人每小时SKU拣货时间</a></li>
+                    <li><a href="#jump76">工人每小时货架操作时间</a></li>
+                  </ul>
+                </li>
+            
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <!----------- PART I----------->
+        <div class="main-page">
+          <div class=" panel panel-default" id = "jump1">
+            <div class="panel-heading">概览</div>
+          			<div class="explainLabel">分析数据采用<b>{{tdate_range|safe}}</b>的数据。<br></div>
+            <div class="panel-body" id="jump11">
+                <div>总述</div>
+            </div>
+            <div class="table">
+              <div class='diagram' id="table1_1">{{table1_1|safe}}</div>
+            </div>
+            <div id="jump12">
+                <div class="panel-heading">全天出库量</div>
+                <div class='diagram' id="general1_2">{{general1_2|safe}}</div>
+            </div>
+        </div>
+
+        <div class='page-detail' id = "jump2">
+            <h2>库存统计</h2>
+            <div class="panel panel-default" id="jump21">
+                <div class="panel-heading">库位利用率</div>
+                <div class='diagram' id="general2_1">{{general2_1|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump22">
+                <div class="panel-heading">货架利用率</div>
+                <div class='diagram' id="general2_2">{{general2_2|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump23">
+                <div class="panel-heading">在库商品存放占比</div>
+                <div class='diagram' id="general2_3">{{general2_3|safe}}</div>
+            </div>
+        </div>
+
+        <div class='page-detail' id = "jump3">
+            <h2>订单统计</h2>
+            <div class="panel panel-default" id="jump31">
+                <div class="panel-heading">每小时入库订单总数/件数</div>
+                <div class='diagram' id="general3_1">{{general3_1|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump32">
+                <div class="panel-heading">每小时出库订单总数/件数</div>
+                <div class='diagram' id="general3_2">{{general3_2|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump33">
+                <div class="panel-heading">订单结构分析</div>
+                  <div class='diagram' id="general3_3">{{general3_3|safe}}</div>
+                </div>
+            </div>
+			<div class="panel panel-default" id="jump34">
+                <div class="panel-heading">订单分布分析</div>
+                <div class='diagram' id="general3_4">{{general3_4|safe}}</div>
+            </div>
+        </div>
+
+        <div class='page-detail' id = "jump4">
+            <h2>SKU统计</h2>
+            <div class="panel panel-default" id="jump41">
+                <div class="panel-heading">SKU热销TOP20</div>
+                <div class='diagram' id="general4_1">{{general4_1|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump42">
+                <div class="panel-heading">SKU滞销TOP20</div>
+                <div class='diagram' id="general4_2">{{general4_2|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump43">
+                <div class="panel-heading">销量预测</div>
+                <div class='diagram' id="general4_3">{{general4_3|safe}}</div>
+            </div>
+        </div>
+
+        <div class='page-detail' id = "jump5">
+            <h2 >工作站出库统计</h2>
+            <div class="panel panel-default" id="jump51">
+                <div class="panel-heading">格口使用率</div>
+                <div class='diagram' id="general5_1">{{general5_1|safe}}</div>
+            </div>
+			<div class="panel panel-default" id="jump52">
+				<div class="panel-heading">工作站工作时长</div>
+                <div class='diagram' id="general5_2">
+					{{general5_2|safe}}
+					<span>备注: 空闲时间为工作站无操作任务时间</span>
+				</div>
+			</div>
+            <div class="panel panel-default" id="jump53">
+                <div class="panel-heading">工作站出库效率</div>
+                <div class='diagram' id="general5_3">{{general5_3|safe}}</div>
+            </div>
+        </div>
+
+        <div class='page-detail' id = "jump6">
+            <h2>AGV统计</h2>
+            <div class="panel panel-default" id="jump63">
+                <div class="panel-heading">AGV单机效率分析</div>
+                <div class='diagram' id="general6_3">{{general6_3|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump65">
+                <div class="panel-heading">AGV行走里程数</div>
+                <div class='diagram' id="general6_5">{{general6_5|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump66">
+                <div class="panel-heading">单个AGV里程数</div>
+                <div class='diagram' id="general6_6">{{general6_6|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump67">
+                <div class="panel-heading">货架搬运次数</div>
+                <div class='diagram' id="general6_7">{{general6_7|safe}}</div>
+            </div>
+            <div class="panel panel-default" id="jump68">
+                <div class="panel-heading">AGV充电次数,时长</div>
+                <div class='diagram' id="general6_8">
+					{{general6_8|safe}}
+				</div>
+            </div>
+            <div class="panel panel-default" id="jump69">
+                <div class="panel-heading">AGV历史充电次数,时长分布</div>
+                <div class='diagram' id="general6_9">
+					{{general6_9|safe}}
+					<span>备注: min->最小值, Q1->下四分位数, meidan->中位数, Q3->上四分位数, max->最大值</span>
+				</div>
+            </div>
+        </div>
+
+        <div class='page-detail' id = "jump7">
+            <h2>工人KPI</h2>
+            <div class="panel panel-default" id="jump71">
+                <div class="panel-heading">工人入库效率</div>
+                <div class="table_wrapper">
+                <div class='diagram' id="table7_1">
+					{{table7_1|safe}}
+					<span>备注: 等待时间为工人等待货架就位时间</span>
+				</div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="jump72">
+                <div class="panel-heading">工人拣货效率</div>
+                <div class="table_wrapper">
+                <div class='diagram' id="table7_2">
+					{{table7_2|safe}}
+					<span>备注: 等待时间为工人等待货架就位时间</span>
+				</div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="jump73">
+                <div class="panel-heading">当日工人SKU拣货时长</div>
+                <div class='diagram' id="general7_3">
+					{{general7_3|safe}}
+					<span>备注: min->最小值, Q1->下四分位数, meidan->中位数, Q3->上四分位数, max->最大值</span>
+				</div>
+            </div>
+            <div class="panel panel-default" id="jump74">
+                <div class="panel-heading">当日工人单次货架操作时长</div>
+                <div class='diagram' id="general7_4">
+					{{general7_4|safe}}
+					<span>备注: min->最小值, Q1->下四分位数, meidan->中位数, Q3->上四分位数, max->最大值</span>
+				</div>
+            </div>
+            <div class="panel panel-default" id="jump75">
+                <div class="panel-heading">工人每小时SKU拣货时间</div>
+                <div class='diagram' id="general7_5">
+					{{general7_5|safe}}
+					<span>备注: min->最小值, Q1->下四分位数, meidan->中位数, Q3->上四分位数, max->最大值</span>
+				</div>
+            </div>
+            <div class="panel panel-default" id="jump76">
+                <div class="panel-heading">工人每小时货架操作时间</div>
+                <div class='diagram' id="general7_6">
+					{{general7_6|safe}}
+					<span>备注: min->最小值, Q1->下四分位数, meidan->中位数, Q3->上四分位数, max->最大值</span>
+				</div>
+            </div>
+        </div>
+        <!----------- PART VIII----------->
+        <!-- <div class='page-detail' id = "jump8" style="border: 1px solid #ccc; padding: 0 25px; width:800px;">
+            <h3>免责声明</h3>
+            <p >本报告中的预测和推荐部分仅供参考，不承担任何法律责任</p>
+        </div> -->
+
+        </div>
+        <p style="text-align: center; color: #666;">Copyright © 2015-<span class="getYear"></span> &nbsp;&nbsp;马路创新 版权所有 &nbsp;&nbsp;</p>
+        <!-- /#page-content-wrapper -->
+  </div>
+  <!--/div-->
+</body>
+<script>
+  function altRows(){
+  var table = document.getElementsByClassName("splitTable");
+  for(i = 0; i < table.length; i++){
+      var heads = table[i].getElementsByTagName("thead");
+      for(j = 0; j < heads.length; j++){
+          var headrow = heads[j].getElementsByTagName("th");
+          for(k = 0; k < headrow.length; k++){
+              if(k < headrow.length/2){
+                  headrow[k].className = 'leftevenrowcolor';
+              } else {
+                  headrow[k].className = 'rightevenrowcolor';
+              }
+          }
+      }
+      var rows = table[i].getElementsByTagName("tr");
+      for(j = 0; j < rows.length; j++){
+          if(j % 2 == 0){
+              var head = rows[j].getElementsByTagName("th");
+              head[0].className = 'leftevenrowcolor';
+              var cols = rows[j].getElementsByTagName("td");
+              for(k = 0; k < cols.length; k++){
+                  if(k < cols.length/2) {
+                      cols[k].className = 'leftevenrowcolor';
+                  }
+                  else {
+                      cols[k].className = 'rightevenrowcolor';
+                  }
+              }
+          } else {
+              var head = rows[j].getElementsByTagName("th");
+              head[0].className = 'leftoddrowcolor';
+              var cols = rows[j].getElementsByTagName("td");
+              for(k = 0; k < cols.length; k++){
+                  if(k < cols.length/2) {
+                      cols[k].className = 'leftoddrowcolor';
+                  }
+                  else {
+                      cols[k].className = 'rightoddrowcolor';
+                  }
+              }
+          }
+      }
+  }
+  var table = document.getElementsByClassName("normalTable");
+  for(i = 0; i < table.length; i++){
+     var rows = table[i].getElementsByTagName("tr");
+     for(j = 0; j < rows.length; j++){
+         if(j % 2 == 0){
+             rows[j].className = 'leftevenrowcolor';
+         }
+         else {
+             rows[j].className = 'leftoddrowcolor';
+         }
+     }
+  }
+}
+window.onload=function(){
+  altRows();
+}
+
+
+</script>
+<script>
+    $(document).ready(function() {
+        var trigger = $('.hamburger'),
+            explainer = $('.explainLabel'),
+            isSubClosed = false,
+            indicator = $('#indicator'),
+            isClosed = false;
+        $('#wrapper').toggleClass('toggled');
+        altRows();
+
+        trigger.click(function () {
+		  hamburger_cross();
+		});
+    function year() {
+        var time = new Date();
+        $(".getYear").text(time.getFullYear());
+    }
+    year();
+		function hamburger_cross() {
+		  if (isClosed == true) {
+			indicator.hide();
+			explainer.hide();
+			trigger.removeClass('is-open');
+			trigger.addClass('is-closed');
+			isClosed = false;
+		  } else {
+			indicator.show();
+			explainer.show();
+			trigger.removeClass('is-closed');
+			trigger.addClass('is-open');
+			isClosed = true;
+		  }
+	    }
+        hamburger_cross();
+    });
+</script>
+<script type="text/javascript">
+    // indicatorContents = {
+    //   'general1_1': '待添加',
+    //   'general2_1': '待添加',
+    //   'general2_2': '待添加',
+    //   'general2_3': '待添加',
+    //   'general3_1': '你可以点击上方的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general3_2': '你可以点击上方的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general3_3': '待添加',
+    //   'general4_1': '待添加',
+    //   'general4_2': '待添加',
+    //   'general4_3': '待添加',
+    //   'general4_4': '你可以将鼠标置于小方块是观看产品名称和值',
+    //   'general5_1': '你可以点击上方的小图标隐藏你不想看到的折线，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general5_2': '待添加',
+    //   'general5_3': '待添加',
+    //   'general6_1': '可以将鼠标放置在饼状图的某色块以显示该色块的数值以及比例，你也可以点击右侧的小图标隐藏你不想看到的色块',
+    //   'general6_2': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general6_3': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general6_4': '可以将鼠标放置在饼状图的某色块以显示该色块的数值以及比例，你也可以点击右侧的小图标隐藏你不想看到的色块',
+    //   'general6_5': '你可以点击上方的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general6_6': '你可以点击上方的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general6_7': '你可以点击上方的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general6_8': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general6_9': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'table7_1': '待添加',
+    //   'table7_2': '待添加',
+    //   'general7_3': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general7_4': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general7_5': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    //   'general7_6': '你可以点击右侧的小图标隐藏你不想看到的色块，你也可以将鼠标置于小图标上观看所有的值',
+    // }
+    // window.addEventListener("scroll",function(e){
+    //         var t = document.documentElement.scrollTop;
+    //         var outputCharts = document.getElementsByClassName("diagram");
+    //         var min_pos_y = document.body.scrollHeight;
+    //         var min_pos_y_index = -1;
+    //         for(i = 0; i < outputCharts.length; i++){
+    //             var chart = outputCharts[i];
+    //             var pos_y = chart.getBoundingClientRect().top+200;
+    //             if(pos_y > 0){
+    //                 if(pos_y < min_pos_y){
+    //                     min_pos_y=pos_y;
+    //                     min_pos_y_index=i;
+    //                 }
+    //             }
+    //         }
+    //         var indicate_element = outputCharts[min_pos_y_index];
+
+    //         var id = indicate_element.getAttribute("id");
+    //         document.getElementById("indicator-head-label").innerText = "可互动";
+    //         document.getElementById("indicator-body-label").innerText = indicatorContents[id];
+
+    //     });
+</script>
+</html>
