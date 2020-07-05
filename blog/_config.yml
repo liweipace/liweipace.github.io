@@ -89,7 +89,9 @@ archive_generator: #归档页的配置
   per_page: 30 #归档页每页博客数
   yearly: true #按年归档
   monthly: true #按月归档
-
+#tag设置
+tag_generator:
+  per_page: 40 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:

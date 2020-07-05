@@ -2,6 +2,8 @@
 title: python_virtualenv
 date: 2020-07-04 15:58:58
 tags:
+- Python
+- Virtualenv 
 ---
 # Python环境控制
 

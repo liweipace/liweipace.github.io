@@ -1,7 +1,9 @@
 ---
 title: java_hello_world
 date: 2020-07-04 19:58:58
-tags:
+tags: 
+- JAVA
+- hello_world
 ---
 # Java Hello World
 ## 基本类型和操作
