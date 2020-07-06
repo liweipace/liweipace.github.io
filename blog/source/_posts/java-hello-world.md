@@ -4,7 +4,6 @@ date: 2020-06-04 19:58:58
 tags: 
 - JAVA
 - Hello World
-password: lovelw
 ---
 # Java Hello World
 ## 基本类型和操作
