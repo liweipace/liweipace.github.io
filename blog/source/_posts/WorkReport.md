@@ -9,7 +9,7 @@ tags:
 
 ## 2020-05
 
-* 前两周：学习pyecharts，打造了可交互的[公司日报]{https://liweipace.github.io/2020/07/03/DailyReport/#more}。
+* 前两周：学习pyecharts，打造了可交互的[公司日报](https://liweipace.github.io/2020/07/03/DailyReport/#more)。
 * 后两周：面向对象的将代码向不同仓库拓展，保证了日报在不同项目中的横向通用；推动了公司数据库索引的建立和完善，提升sql查询速度；对运行速度做进一步优化，将日报生成速度由数十分钟降低到一分钟内。
 
 ## 2020-06
