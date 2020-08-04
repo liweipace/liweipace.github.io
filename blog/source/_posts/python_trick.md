@@ -6,8 +6,9 @@ tags:
 - DataAnalysis
 - Python
 ---
+实习中的一些python优化问题
+<!-- more -->
 # Python优化
-<!--more-->
 ## 取SQL速度
 
 由于数据库维护，全量更新等等原因，所以优先查看数据库索引是否健全，其次优化语句

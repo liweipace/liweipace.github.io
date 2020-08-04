@@ -5,12 +5,13 @@ tags:
 - Python
 - Virtualenv 
 ---
+基于virtualenv的python环境控制
+<!-- more -->
 # Python环境控制
 
 ## Motivation
   * package的不断更新迭代，导致一些python课程的实现无法重现
   * 使用tensorflow一类的软件时，1.x版本和2.x版本存在巨大的差异，相当于两套各有千秋的成熟方案。安装两个不同版本的虚拟python环境能有效的减少麻烦。
-<!--more-->
 ## 实现
 在命令行窗口
 ```

@@ -5,8 +5,9 @@ tags:
 - WorkReport
 - DataAnalysis
 ---
+马路创新三个月实习总结
+<!-- more -->
 # 实习工作总结
-<!--more-->
 ## 2020-05
 
 * 前两周：学习pyecharts，打造了可交互的[公司日报](https://liweipace.github.io/2020/07/03/DailyReport/#more)。基于货到人的思想定义了五类指标分别是：库存，订单，工作站，仓库，机器人，工人。

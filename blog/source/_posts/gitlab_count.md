@@ -6,8 +6,9 @@ tags:
 - gitlab
 - python-gitlab
 ---
+实习代码量统计
+<!-- more -->
 # 实习代码量统计
-<!--more-->
 ## Gitlab主页统计
 
 ![04c7ec9c30130a880828895542491ce](https://i.loli.net/2020/07/22/u4pGtAY9zB2bOHv.png)
